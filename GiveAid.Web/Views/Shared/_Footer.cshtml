@@ -1,0 +1,77 @@
+@* ==========================================================================
+   Give-AID NGO — Shared Footer Partial (_Footer.cshtml)
+   Modular, informative, and accessible footer
+   ========================================================================== *@
+
+<footer class="giveaid-footer" role="contentinfo">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Column 1: Organization Identity & Mission -->
+            <div class="col-lg-4 col-md-6">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <div class="giveaid-brand-icon" style="width: 36px; height: 36px;" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        </svg>
+                    </div>
+                    <span class="fs-4 fw-bold text-white">Give<span class="text-info">-AID</span></span>
+                </div>
+                <p>
+                    A centralized NGO management and welfare donation portal empowering grassroots communities, health drives, educational aid, and emergency relief programs.
+                </p>
+                <div class="giveaid-footer-badge">
+                    Registered Non-Profit Initiative (Academic Demo)
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Navigation Links -->
+            <div class="col-lg-2 col-md-6 col-6">
+                <h5>Quick Links</h5>
+                <ul class="giveaid-footer-links">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a href="/Home/About">About Us</a></li>
+                    <li><a href="/Causes">Active Causes</a></li>
+                    <li><a href="/Programmes">Welfare Events</a></li>
+                    <li><a href="/Gallery">Photo Gallery</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Help & Legal -->
+            <div class="col-lg-2 col-md-6 col-6">
+                <h5>Support</h5>
+                <ul class="giveaid-footer-links">
+                    <li><a href="/Help">Help Centre &amp; FAQ</a></li>
+                    <li><a href="/Contact">Contact Us</a></li>
+                    <li><a href="/Partners">Our Partners</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Demonstration Contact Information -->
+            <div class="col-lg-4 col-md-6">
+                <h5>Contact &amp; Inquiries</h5>
+                <p class="mb-2">
+                    <strong>Demo Support:</strong> <span class="text-white">support@giveaid-demo.org</span>
+                </p>
+                <p class="mb-2">
+                    <strong>Toll-Free Helpline:</strong> <span class="text-white">+92 (0) 800-GIVE-AID</span>
+                </p>
+                <p class="small text-muted mb-0">
+                    <em>Notice: This website is developed as an academic Software Engineering eProject. All donations processed on this platform are simulated.</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="giveaid-footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <div>
+                &copy; 2026 <strong>Give-AID NGO</strong>. All rights reserved.
+            </div>
+            <div>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> &middot;
+                <a href="/Help">Terms &amp; FAQs</a> &middot;
+                <span class="text-muted">Built with ASP.NET Core MVC &amp; Bootstrap 5</span>
+            </div>
+        </div>
+    </div>
+</footer>

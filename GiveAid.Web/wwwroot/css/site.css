@@ -1,31 +1,395 @@
+/* ==========================================================================
+   Give-AID NGO — Master Design System & Shared Stylesheet
+   Designed for ASP.NET Core MVC with Bootstrap 5
+   ========================================================================== */
+
+:root {
+  /* Brand Palette (Humanitarian Deep Teal & Warm Crimson Accent) */
+  --giveaid-primary: #0f766e;
+  --giveaid-primary-dark: #115e59;
+  --giveaid-primary-light: #f0fdfa;
+  --giveaid-primary-subtle: #ccfbf1;
+  --giveaid-secondary: #1e293b;
+  --giveaid-accent: #e11d48;
+  --giveaid-accent-dark: #be123c;
+  --giveaid-accent-light: #fff1f2;
+  --giveaid-warning: #d97706;
+  --giveaid-success: #15803d;
+
+  /* Neutrals & Surfaces */
+  --giveaid-bg: #f8fafc;
+  --giveaid-surface: #ffffff;
+  --giveaid-border: #e2e8f0;
+  --giveaid-border-light: #f1f5f9;
+
+  /* Typography Colors */
+  --giveaid-text-main: #0f172a;
+  --giveaid-text-muted: #475569;
+  --giveaid-text-light: #64748b;
+  --giveaid-text-inverse: #ffffff;
+
+  /* Spacing & Radii */
+  --giveaid-radius-sm: 6px;
+  --giveaid-radius-md: 10px;
+  --giveaid-radius-lg: 16px;
+  --giveaid-radius-pill: 50px;
+
+  /* Shadows */
+  --giveaid-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --giveaid-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --giveaid-shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.12);
+
+  /* Transitions */
+  --giveaid-transition: all 0.2s ease-in-out;
+}
+
+/* ==========================================================================
+   Base & Layout Reset
+   ========================================================================== */
+
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--giveaid-text-main);
+  background-color: var(--giveaid-bg);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Skip to main content link (Accessibility / Screen Readers) */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--giveaid-secondary);
+  color: #ffffff;
+  padding: 10px 18px;
+  z-index: 9999;
+  border-radius: var(--giveaid-radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease-in;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.skip-link:focus {
+  top: 15px;
+  outline: 3px solid var(--giveaid-accent);
+}
+
+/* Accessible Keyboard Focus Rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.55) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+
+main#main-content {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   Header & Navbar Styling
+   ========================================================================== */
+
+.giveaid-navbar {
+  background-color: var(--giveaid-surface);
+  border-bottom: 1px solid var(--giveaid-border);
+  box-shadow: var(--giveaid-shadow-sm);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: var(--giveaid-transition);
+}
+
+/* Brand Identity */
+.giveaid-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.giveaid-brand-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--giveaid-primary) 0%, var(--giveaid-primary-dark) 100%);
+  color: #ffffff;
+  border-radius: var(--giveaid-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.25);
+}
+
+.giveaid-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.giveaid-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--giveaid-secondary);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.giveaid-brand-title span {
+  color: var(--giveaid-primary);
+}
+
+.giveaid-brand-tagline {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--giveaid-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Navigation Links */
+.giveaid-nav .nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--giveaid-text-main);
+  padding: 0.5rem 0.85rem !important;
+  border-radius: var(--giveaid-radius-sm);
+  transition: var(--giveaid-transition);
+}
+
+.giveaid-nav .nav-link:hover {
+  color: var(--giveaid-primary);
+  background-color: var(--giveaid-primary-light);
+}
+
+.giveaid-nav .nav-link.active {
+  color: var(--giveaid-primary) !important;
+  background-color: var(--giveaid-primary-light);
+}
+
+/* Dropdown Menu Styling */
+.giveaid-dropdown-menu {
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  box-shadow: var(--giveaid-shadow-md);
+  padding: 0.5rem;
+  min-width: 220px;
+}
+
+.giveaid-dropdown-menu .dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--giveaid-radius-sm);
+  color: var(--giveaid-text-main);
+  transition: var(--giveaid-transition);
+}
+
+.giveaid-dropdown-menu .dropdown-item:hover {
+  background-color: var(--giveaid-primary-light);
+  color: var(--giveaid-primary);
+}
+
+/* Donate Call to Action Button */
+.btn-giveaid-donate {
+  background-color: var(--giveaid-accent);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--giveaid-radius-pill);
+  border: none;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  transition: var(--giveaid-transition);
+}
+
+.btn-giveaid-donate:hover {
+  background-color: var(--giveaid-accent-dark);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
+}
+
+/* Secondary Header Actions (Login / Portal Placeholder) */
+.btn-giveaid-outline {
+  border: 1px solid var(--giveaid-border);
+  color: var(--giveaid-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--giveaid-radius-pill);
+  background: transparent;
+  transition: var(--giveaid-transition);
+}
+
+.btn-giveaid-outline:hover {
+  border-color: var(--giveaid-primary);
+  color: var(--giveaid-primary);
+  background-color: var(--giveaid-primary-light);
+}
+
+/* ==========================================================================
+   Footer Styling
+   ========================================================================== */
+
+.giveaid-footer {
+  background-color: var(--giveaid-secondary);
+  color: #cbd5e1;
+  padding-top: 3.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
+  border-top: 3px solid var(--giveaid-primary);
+}
+
+.giveaid-footer h5 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.giveaid-footer h5::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background-color: var(--giveaid-primary);
+  border-radius: 2px;
+}
+
+.giveaid-footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+.giveaid-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.giveaid-footer-links li {
+  margin-bottom: 0.55rem;
+}
+
+.giveaid-footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--giveaid-transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.giveaid-footer-links a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+.giveaid-footer-badge {
+  display: inline-block;
+  background-color: rgba(15, 118, 110, 0.25);
+  color: #2dd4bf;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--giveaid-radius-pill);
+  margin-bottom: 1rem;
+}
+
+.giveaid-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.giveaid-footer-bottom a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.giveaid-footer-bottom a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Reusable UI Components (Cards, Badges, Typography)
+   ========================================================================== */
+
+.giveaid-card {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  box-shadow: var(--giveaid-shadow-sm);
+  transition: var(--giveaid-transition);
+}
+
+.giveaid-card:hover {
+  box-shadow: var(--giveaid-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.giveaid-badge-primary {
+  background-color: var(--giveaid-primary-light);
+  color: var(--giveaid-primary);
+  border: 1px solid var(--giveaid-primary-subtle);
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--giveaid-radius-pill);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .giveaid-navbar .navbar-collapse {
+    background-color: var(--giveaid-surface);
+    padding: 1rem;
+    border-radius: var(--giveaid-radius-md);
+    box-shadow: var(--giveaid-shadow-md);
+    margin-top: 0.75rem;
+  }
+
+  .giveaid-nav .nav-link {
+    padding: 0.65rem 0.75rem !important;
+  }
+
+  .giveaid-nav-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-giveaid-donate {
+    justify-content: center;
+  }
 }

@@ -1,0 +1,76 @@
+@* ==========================================================================
+   Give-AID NGO — Shared Navigation Bar Partial (_Navbar.cshtml)
+   Accessible, responsive navbar with mobile toggler and clear visual hierarchy
+   ========================================================================== *@
+
+<header>
+    <nav class="navbar navbar-expand-lg giveaid-navbar" aria-label="Main Navigation">
+        <div class="container">
+            <!-- Brand Logo & Name -->
+            <a class="giveaid-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="giveaid-brand-icon" aria-hidden="true">
+                    <!-- Clean SVG Heart/Hands Icon -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
+                </div>
+                <div class="giveaid-brand-text">
+                    <span class="giveaid-brand-title">Give<span>-AID</span></span>
+                    <span class="giveaid-brand-tagline">NGO &amp; Welfare</span>
+                </div>
+            </a>
+
+            <!-- Accessible Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links & Action CTAs -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 giveaid-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About" title="Learn more about our mission and team">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Causes" title="Explore social causes and donation campaigns">Causes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Programmes" title="View community welfare events and programmes">Programmes</a>
+                    </li>
+                    <!-- Dropdown for secondary discovery modules -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu giveaid-dropdown-menu" aria-labelledby="exploreDropdown">
+                            <li><a class="dropdown-item" href="/Gallery">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="/Partners">Affiliated NGOs &amp; Partners</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Help">Help Centre &amp; FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Contact" title="Send inquiries or feedback">Contact Us</a>
+                    </li>
+                </ul>
+
+                <!-- Action CTAs (Login & Donate) -->
+                <div class="giveaid-nav-actions d-flex align-items-lg-center gap-2">
+                    <a href="/Account/Login" class="btn btn-giveaid-outline" title="Access member or donor portal">
+                        Sign In
+                    </a>
+                    <a href="/Donate" class="btn btn-giveaid-donate" title="Contribute to active causes">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span>Donate Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
