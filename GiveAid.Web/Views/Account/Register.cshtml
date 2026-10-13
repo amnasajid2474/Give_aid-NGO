@@ -1,0 +1,64 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Create Account";
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="auth-icon-circle">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <line x1="19" y1="8" x2="19" y2="14"/>
+                    <line x1="22" y1="11" x2="16" y2="11"/>
+                </svg>
+            </div>
+            <h1 class="auth-title">Join Give-AID</h1>
+            <p class="auth-subtitle">Create your account to support humanitarian causes and community welfare.</p>
+        </div>
+
+        <form asp-controller="Account" asp-action="Register" asp-route-returnUrl="@returnUrl" method="post" novalidate>
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 px-3 small rounded-3 mb-3" role="alert"></div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="FullName" class="form-control" id="regFullName" placeholder="Your Full Name" autocomplete="name" required />
+                <label for="regFullName">Full Name</label>
+                <span asp-validation-for="FullName" class="text-danger small"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" id="regEmail" placeholder="name@example.com" autocomplete="email" required />
+                <label for="regEmail">Email Address</label>
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control" id="regPassword" placeholder="Password (minimum 8 characters)" autocomplete="new-password" required />
+                <label for="regPassword">Password (min 8 characters)</label>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-floating mb-4">
+                <input asp-for="ConfirmPassword" class="form-control" id="regConfirmPassword" placeholder="Confirm Password" autocomplete="new-password" required />
+                <label for="regConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+            </div>
+
+            <button type="submit" class="btn btn-giveaid-primary w-100 py-2">
+                Create Account
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            Already registered? <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="@returnUrl">Sign in here</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

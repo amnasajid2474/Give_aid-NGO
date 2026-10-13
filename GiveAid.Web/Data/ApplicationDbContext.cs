@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using GiveAid.Web.Models;
 
@@ -5,9 +6,10 @@ namespace GiveAid.Web.Data;
 
 /// <summary>
 /// Entity Framework Core database context for the Give-AID web application.
+/// Inherits from IdentityDbContext to include ASP.NET Core Identity tables.
 /// Manages entity sets, relational constraints, decimal precisions, and indexes.
 /// </summary>
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

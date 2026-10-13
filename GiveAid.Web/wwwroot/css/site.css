@@ -393,3 +393,103 @@ main#main-content {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   Authentication & Form Components
+   ========================================================================== */
+
+.btn-giveaid-primary {
+  background-color: var(--giveaid-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--giveaid-radius-md);
+  border: 1px solid var(--giveaid-primary);
+  transition: var(--giveaid-transition);
+}
+
+.btn-giveaid-primary:hover {
+  background-color: var(--giveaid-primary-dark);
+  border-color: var(--giveaid-primary-dark);
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+}
+
+.auth-wrapper {
+  min-height: calc(100vh - 350px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-lg);
+  box-shadow: var(--giveaid-shadow-lg);
+  padding: 2.25rem;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--giveaid-primary-light);
+  color: var(--giveaid-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.auth-title {
+  font-weight: 800;
+  color: var(--giveaid-secondary);
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.auth-subtitle {
+  color: var(--giveaid-text-muted);
+  font-size: 0.925rem;
+}
+
+.form-floating > label {
+  color: var(--giveaid-text-light);
+}
+
+.form-floating > .form-control:focus ~ label {
+  color: var(--giveaid-primary);
+}
+
+.form-control:focus {
+  border-color: var(--giveaid-primary) !important;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15) !important;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--giveaid-border-light);
+  font-size: 0.9rem;
+  color: var(--giveaid-text-muted);
+}
+
+.auth-footer a {
+  color: var(--giveaid-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

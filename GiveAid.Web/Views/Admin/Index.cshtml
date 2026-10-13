@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Admin Portal";
+}
+
+<div class="container py-4">
+    <div class="giveaid-card p-4 p-md-5">
+        <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+            <div>
+                <span class="badge bg-danger-subtle text-danger fw-semibold px-3 py-2 rounded-pill mb-2">Admin Authorized Area</span>
+                <h1 class="h2 fw-bold text-dark mb-1">Administrative Dashboard</h1>
+                <p class="text-muted mb-0">Role-based security verified: Welcome, <strong>@User.Identity?.Name</strong></p>
+            </div>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-giveaid-outline">
+                &larr; View Public Site
+            </a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light">
+                    <h5 class="fw-bold text-dark">Security Status</h5>
+                    <p class="text-muted small mb-2">ASP.NET Core Identity authentication active.</p>
+                    <span class="badge bg-success">Role: Admin Confirmed</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light">
+                    <h5 class="fw-bold text-dark">Role Protection</h5>
+                    <p class="text-muted small mb-2"><code>[Authorize(Roles = "Admin")]</code> controller attribute is working.</p>
+                    <span class="badge bg-primary">RBAC Guard Active</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-light">
+                    <h5 class="fw-bold text-dark">Full Dashboard</h5>
+                    <p class="text-muted small mb-2">Full NGO & Cause management will be completed in Task 16.</p>
+                    <span class="badge bg-secondary">Roadmap Phase 4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

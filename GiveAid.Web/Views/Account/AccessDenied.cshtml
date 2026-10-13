@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="container py-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+            <div class="giveaid-card p-4 p-md-5">
+                <div class="mb-3 text-danger">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                    </svg>
+                </div>
+                <h1 class="h3 fw-bold text-dark mb-2">Access Denied</h1>
+                <p class="text-muted mb-4">
+                    You do not have permission to access this resource. This area is reserved for system administrators.
+                </p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-giveaid-primary">
+                        Back to Home
+                    </a>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-giveaid-outline">Switch Account</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-giveaid-outline">Sign In as Admin</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
