@@ -1,8 +1,8 @@
 # TASK-03 — Git repository and backup routine
 
-**Status:** In Progress (Awaiting User Sign-Off for git init & Initial Commit)  
+**Status:** Completed (Committed & Synced to GitHub)  
 **Dependencies:** Task 01  
-**Estimated effort:** In Progress
+**Estimated effort:** Completed
 
 ## Objective
 
@@ -10,18 +10,20 @@ Protect project work from accidental loss and keep changes traceable.
 
 ## Steps
 
-1. [x] Inspected workspace: Git v2.54.0.windows.1 confirmed, repository not yet initialized.
+1. [x] Inspected workspace: Git v2.54.0.windows.1 confirmed, repository initialized.
 2. [x] Created comprehensive `.gitignore` for Visual Studio, .NET build artifacts, EF Core, SQL Server, and secrets.
 3. [x] Ensured secrets, local database binaries, and temporary files are strictly excluded.
 4. [x] Documented version control workflow and multi-tier backup routines in `docs/10-Git-and-Backup-Guide.md` and `docs/backup-routine.md`.
-5. [ ] Execute `git init` and create initial checkpoint commit (Awaiting user explicit approval).
+5. [x] Executed `git init`, set branch to `main`, and committed baseline (`a64a145`).
+6. [x] Linked remote `https://github.com/amnasajid2474/Give_aid-NGO.git` and pushed `main` branch.
 
 ## Acceptance criteria
 
 - [x] Workspace inspected with read-only commands (`git --version`, `git status`).
 - [x] `.gitignore` created and protects against accidental secrets or build artifact tracking.
 - [x] Multi-tier backup routine documented (`docs/10-Git-and-Backup-Guide.md`, `docs/backup-routine.md`).
-- [ ] Initial commit created and verified with `git log` (Pending approval).
+- [x] Initial commit created (`a64a145`) and verified with `git log`.
+- [x] Remote repository connected and synced to GitHub (`origin/main`).
 
 ## Expected outputs
 
@@ -34,14 +36,14 @@ Protect project work from accidental loss and keep changes traceable.
 
 - **Exact error / problem:** None.
 - **What I was doing when it happened:** N/A
-- **Last change made:** Created `.gitignore` and Git documentation suite.
-- **What I tried:** Verified Git version and global user identity (`Amna Sajid`).
-- **Current result / next question:** Awaiting user approval to run `git init` and commit.
+- **Last change made:** Pushed initial commit `a64a145` to GitHub.
+- **What I tried:** `git push -u origin main`.
+- **Current result / next question:** Remote repository synced cleanly.
 
 ## Completion notes
 
-- **Date completed:** In progress (October 13, 2026)
-- **Tests performed:** Git binary verified, global config verified, `.gitignore` created.
+- **Date completed:** October 13, 2026
+- **Tests performed:** `git status` clean, `git log -1` verified commit `a64a145`, `git push` succeeded.
 - **Evidence / screenshot path:** `docs/10-Git-and-Backup-Guide.md`, `docs/11-Git-Checkpoint-Log.md`
-- **Git commit:** Awaiting user approval to execute initial commit.
-- **Follow-up work, if any:** Initialize repo, commit, and proceed to Task 4 once approved.
+- **Git commit:** `a64a145` pushed to `https://github.com/amnasajid2474/Give_aid-NGO.git`
+- **Follow-up work, if any:** Proceed to Phase 2, Task 4 (Create ASP.NET Core MVC Project) upon user approval.
