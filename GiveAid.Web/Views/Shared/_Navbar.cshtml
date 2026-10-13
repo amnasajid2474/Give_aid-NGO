@@ -30,10 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 giveaid-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" && ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/About" title="Learn more about our mission and team">About Us</a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Action"]?.ToString() == "About" && ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="About" title="Learn more about our mission and team">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Causes" title="Explore social causes and donation campaigns">Causes</a>

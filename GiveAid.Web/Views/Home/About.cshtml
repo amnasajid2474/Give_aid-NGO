@@ -1,0 +1,293 @@
+@model AboutViewModel
+@{
+    ViewData["Title"] = "About Give-AID — Our Mission, Team & Humanitarian Impact";
+}
+
+<!-- =========================================================================
+     ABOUT US HEADER BANNER
+     ========================================================================= -->
+<header class="about-hero-banner text-center">
+    <div class="container">
+        <span class="badge bg-light-subtle text-white border border-light-subtle px-3 py-1 rounded-pill small mb-2">
+            Institutional Information &amp; Governance
+        </span>
+        <h1 class="display-5 fw-bold text-white mb-2">About Give-AID NGO</h1>
+        <p class="lead text-light mb-0 mx-auto" style="max-width: 700px;">
+            A compassionate welfare platform committed to transparent humanitarian relief, certified NGO partnerships, and community empowerment across Pakistan.
+        </p>
+    </div>
+</header>
+
+<!-- =========================================================================
+     IN-PAGE SECTION JUMP NAVIGATION (All 7 Sections Quick Jump)
+     ========================================================================= -->
+<nav class="about-nav-bar" aria-label="About Us Sections Navigation">
+    <span class="fw-bold text-dark small me-2 ps-2">Jump to:</span>
+    <a href="#what-we-do" class="about-nav-link">1. What We Do</a>
+    <a href="#our-mission" class="about-nav-link">2. Our Mission</a>
+    <a href="#our-team" class="about-nav-link">3. Our Team</a>
+    <a href="#career-with-us" class="about-nav-link">4. Career With Us</a>
+    <a href="#our-achievements" class="about-nav-link">5. Our Achievements</a>
+    <a href="#our-supporters" class="about-nav-link">6. Our Supporters</a>
+    <a href="#read-about-us" class="about-nav-link">7. Read About Us</a>
+</nav>
+
+<!-- =========================================================================
+     SECTION 1: WHAT WE DO (FR-007)
+     ========================================================================= -->
+<section id="what-we-do" class="about-section-container" aria-labelledby="heading-what-we-do">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 1</span>
+        <span class="text-muted small">Humanitarian Scope</span>
+    </div>
+    <h2 id="heading-what-we-do" class="h3 fw-bold text-dark mb-3">@Model.WhatWeDo.Headline</h2>
+    <p class="lead text-muted mb-4">
+        @Model.WhatWeDo.Summary
+    </p>
+
+    <div class="row g-4">
+        @foreach (var area in Model.WhatWeDo.FocusAreas)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm">
+                    <div class="d-flex align-items-center gap-2 mb-2 text-primary">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 14 14"></polyline>
+                        </svg>
+                        <h3 class="h6 fw-bold text-dark mb-0">@area.Title</h3>
+                    </div>
+                    <p class="text-muted small mb-0">@area.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 2: OUR MISSION & VISION (FR-008)
+     ========================================================================= -->
+<section id="our-mission" class="about-section-container" aria-labelledby="heading-mission">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 2</span>
+        <span class="text-muted small">Core Guiding Principles</span>
+    </div>
+    <h2 id="heading-mission" class="h3 fw-bold text-dark mb-4">Our Mission, Vision &amp; Guiding Values</h2>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-6">
+            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-primary">
+                <span class="text-primary fw-bold small text-uppercase letter-spacing-1">Our Mission</span>
+                <h3 class="h5 fw-bold text-dark mt-1 mb-3">Why Give-AID Exists</h3>
+                <p class="text-muted mb-0">
+                    @Model.Mission.MissionStatement
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 border rounded-3 bg-white h-100 shadow-sm border-start border-4 border-danger">
+                <span class="text-danger fw-bold small text-uppercase letter-spacing-1">Our Vision</span>
+                <h3 class="h5 fw-bold text-dark mt-1 mb-3">The Future We Strive to Build</h3>
+                <p class="text-muted mb-0">
+                    @Model.Mission.VisionStatement
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4 bg-light rounded-3 border">
+        <h3 class="h6 fw-bold text-dark mb-3">Our Core Values:</h3>
+        <div class="row g-2">
+            @foreach (var val in Model.Mission.CoreValues)
+            {
+                <div class="col-12">
+                    <div class="d-flex align-items-start gap-2 small">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-success flex-shrink-0 mt-1" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span class="text-dark">@val</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 3: OUR TEAM (FR-009)
+     ========================================================================= -->
+<section id="our-team" class="about-section-container" aria-labelledby="heading-team">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 3</span>
+        <span class="text-muted small">Governance &amp; Leadership</span>
+    </div>
+    <h2 id="heading-team" class="h3 fw-bold text-dark mb-2">Our Leadership &amp; Operational Team</h2>
+    <p class="text-muted mb-4">
+        Our operational council coordinates field verifications, medical camp logistics, and transparent donor communications.
+    </p>
+
+    <div class="row g-4">
+        @foreach (var member in Model.TeamMembers)
+        {
+            <div class="col-sm-6 col-lg-3">
+                <div class="team-card">
+                    <div class="team-avatar-box" aria-hidden="true">
+                        <span>@member.Name.Substring(0, 1)</span>
+                    </div>
+                    <span class="badge bg-secondary-subtle text-secondary border small mb-2">@member.PlaceholderLabel</span>
+                    <h3 class="h6 fw-bold text-dark mb-1">@member.Name</h3>
+                    <div class="small fw-semibold text-primary mb-2">@member.Role</div>
+                    <p class="text-muted small mb-0">@member.Bio</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="alert alert-light border small text-muted mt-3 mb-0" role="note">
+        <strong>Academic Demonstration Notice:</strong> The profiles above serve as demonstrative team leadership representations for student eProject evaluation. Real trustee data will be configured via the administrative CMS prior to production deployment.
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 4: CAREER WITH US (FR-010)
+     ========================================================================= -->
+<section id="career-with-us" class="about-section-container" aria-labelledby="heading-careers">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 4</span>
+        <span class="text-muted small">Volunteering &amp; Careers</span>
+    </div>
+    <h2 id="heading-careers" class="h3 fw-bold text-dark mb-2">Career With Us &amp; Volunteer Opportunities</h2>
+    <p class="text-muted mb-3">
+        @Model.Career.Overview
+    </p>
+    <div class="p-3 bg-light rounded-3 border mb-4 small text-dark">
+        <strong>How to Apply:</strong> @Model.Career.ApplicationProcess
+    </div>
+
+    <div class="row g-3">
+        @foreach (var role in Model.Career.OpenRoles)
+        {
+            <div class="col-md-4">
+                <div class="p-3 border rounded-3 bg-white h-100 shadow-sm d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                        <span class="badge bg-success-subtle text-success small">@role.Department</span>
+                        <span class="badge bg-light text-muted border small">@role.Type</span>
+                    </div>
+                    <h3 class="h6 fw-bold text-dark mb-2">@role.Title</h3>
+                    <p class="text-muted small flex-grow-1">@role.Description</p>
+                    <div class="pt-2 border-top">
+                        <span class="badge bg-secondary-subtle text-secondary small w-100 text-center py-2">
+                            @role.PlaceholderNotice
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="mt-4 text-center">
+        <a href="/Programmes" class="btn btn-giveaid-primary">
+            Explore Active Programmes &amp; Volunteer Signup &rarr;
+        </a>
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 5: OUR ACHIEVEMENTS (FR-011)
+     ========================================================================= -->
+<section id="our-achievements" class="about-section-container" aria-labelledby="heading-achievements">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 5</span>
+        <span class="text-muted small">Milestones &amp; Impact</span>
+    </div>
+    <h2 id="heading-achievements" class="h3 fw-bold text-dark mb-3">Our Achievements &amp; Historical Milestones</h2>
+    <p class="text-muted mb-4">
+        A documented track record of verifiable humanitarian service delivered across Pakistan's most deserving regions.
+    </p>
+
+    <div class="row g-3">
+        @foreach (var achievement in Model.Achievements)
+        {
+            <div class="col-lg-4">
+                <div class="achievement-milestone-card h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-primary text-white fw-bold">@achievement.Year</span>
+                        <h3 class="h6 fw-bold text-dark mb-0">@achievement.Title</h3>
+                    </div>
+                    <p class="text-muted small mb-3">@achievement.Description</p>
+                    <div class="p-2 bg-light rounded text-primary fw-bold small text-center border">
+                        Impact: @achievement.Metric
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 6: OUR SUPPORTERS (FR-012)
+     ========================================================================= -->
+<section id="our-supporters" class="about-section-container" aria-labelledby="heading-supporters">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 6</span>
+        <span class="text-muted small">Patrons &amp; Donors</span>
+    </div>
+    <h2 id="heading-supporters" class="h3 fw-bold text-dark mb-2">Our Supporters &amp; Institutional Backers</h2>
+    <p class="text-muted mb-4">
+        Give-AID operates with the benevolent backing of philanthropic trusts, healthcare donors, and academic research institutions.
+    </p>
+
+    <div class="row g-4">
+        @foreach (var supporter in Model.Supporters)
+        {
+            <div class="col-sm-6 col-lg-3">
+                <div class="p-3 border rounded-3 bg-white text-center h-100 shadow-sm">
+                    <div class="partner-logo-box mb-2" aria-hidden="true">
+                        <span>@supporter.Name.Substring(0, Math.Min(16, supporter.Name.Length))</span>
+                    </div>
+                    <span class="badge bg-secondary-subtle text-secondary small mb-1">@supporter.PlaceholderLabel</span>
+                    <h3 class="h6 fw-bold text-dark mb-1">@supporter.Name</h3>
+                    <div class="small text-muted mb-2">@supporter.Category</div>
+                    <p class="small text-muted mb-0 fst-italic">@supporter.ContributionType</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- =========================================================================
+     SECTION 7: READ ABOUT US (FR-013)
+     ========================================================================= -->
+<section id="read-about-us" class="about-section-container" aria-labelledby="heading-read-about">
+    <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge bg-primary-subtle text-primary fw-bold">Section 7</span>
+        <span class="text-muted small">In-Depth Background</span>
+    </div>
+    <h2 id="heading-read-about" class="h3 fw-bold text-dark mb-3">Read About Us: Institutional Background &amp; Governance</h2>
+
+    <div class="p-4 bg-white border rounded-3 shadow-sm mb-4">
+        <h3 class="h5 fw-bold text-dark mb-2">Origins &amp; Academic Inception</h3>
+        <p class="text-muted">
+            @Model.ReadAboutUs.InstitutionalHistory
+        </p>
+
+        <h3 class="h5 fw-bold text-dark mb-2 mt-4">Audited Governance &amp; Software Integrity</h3>
+        <p class="text-muted">
+            @Model.ReadAboutUs.GovernanceNarrative
+        </p>
+
+        <div class="p-3 bg-light rounded-3 border mt-3 small text-muted">
+            <strong>Annual Audit &amp; Impact Documentation:</strong> @Model.ReadAboutUs.AnnualReportNotice
+        </div>
+    </div>
+
+    <!-- Final Call to Action -->
+    <div class="text-center p-4 bg-primary-subtle rounded-3 border border-primary-subtle">
+        <h3 class="h5 fw-bold text-dark mb-2">Ready to Make a Difference?</h3>
+        <p class="text-muted small mb-3">Join hundreds of active donors and volunteers supporting verified humanitarian causes.</p>
+        <div class="d-flex justify-content-center gap-2">
+            <a href="/Donate" class="btn btn-giveaid-donate">Donate Now</a>
+            <a href="/Contact" class="btn btn-giveaid-outline">Contact Our Team</a>
+        </div>
+    </div>
+</section>

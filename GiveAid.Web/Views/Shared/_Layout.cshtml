@@ -22,7 +22,7 @@
     <partial name="_Navbar" />
 
     <!-- Main Content Container -->
-    <main id="main-content" role="main" class="container py-4">
+    <main id="main-content" role="main" class="@(ViewData["FullWidth"] as bool? == true ? "p-0" : "container py-4")">
         @RenderBody()
     </main>
 

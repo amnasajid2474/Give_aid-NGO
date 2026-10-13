@@ -493,3 +493,422 @@ main#main-content {
 .auth-footer a:hover {
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   Home Page Components
+   ========================================================================== */
+
+/* Hero Banner */
+.giveaid-hero {
+  background: linear-gradient(135deg, #09403b 0%, #0f766e 60%, #115e59 100%);
+  color: #ffffff;
+  padding: 4.5rem 0 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.giveaid-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(225, 29, 72, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ccfbf1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.95rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  border-radius: var(--giveaid-radius-pill);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title span {
+  color: #fecdd3;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.btn-giveaid-outline-hero {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--giveaid-radius-pill);
+  background: transparent;
+  transition: var(--giveaid-transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-giveaid-outline-hero:hover {
+  background-color: #ffffff;
+  color: var(--giveaid-primary) !important;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hero-trust-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--giveaid-radius-lg);
+  padding: 2rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-trust-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-trust-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fecdd3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Section Headings */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--giveaid-primary);
+  background-color: var(--giveaid-primary-light);
+  border: 1px solid var(--giveaid-primary-subtle);
+  padding: 0.25rem 0.85rem;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--giveaid-radius-pill);
+  margin-bottom: 0.65rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--giveaid-secondary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--giveaid-text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+}
+
+/* Cause Cards */
+.giveaid-cause-card {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  overflow: hidden;
+  box-shadow: var(--giveaid-shadow-sm);
+  transition: var(--giveaid-transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.giveaid-cause-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--giveaid-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.cause-card-img-placeholder {
+  height: 190px;
+  background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 50%, #5eead4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--giveaid-primary-dark);
+  position: relative;
+}
+
+.cause-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cause-progress-wrapper {
+  margin: 1.25rem 0 1rem 0;
+}
+
+.cause-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--giveaid-border);
+  overflow: hidden;
+}
+
+.cause-progress-fill {
+  background: linear-gradient(90deg, var(--giveaid-primary) 0%, var(--giveaid-accent) 100%);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Programme Cards */
+.giveaid-programme-card {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  transition: var(--giveaid-transition);
+  height: 100%;
+}
+
+.giveaid-programme-card:hover {
+  border-color: var(--giveaid-primary);
+  box-shadow: var(--giveaid-shadow-md);
+  transform: translateY(-2px);
+}
+
+.programme-date-box {
+  width: 62px;
+  height: 68px;
+  border-radius: var(--giveaid-radius-sm);
+  background-color: var(--giveaid-primary-light);
+  border: 1px solid var(--giveaid-primary-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.programme-date-day {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--giveaid-primary);
+}
+
+.programme-date-month {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--giveaid-text-light);
+  letter-spacing: 0.05em;
+}
+
+/* Impact Section */
+.impact-section {
+  background-color: var(--giveaid-secondary);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  border-radius: var(--giveaid-radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-stat-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.impact-stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2dd4bf;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.impact-stat-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.impact-stat-subtext {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Partner Cards */
+.partner-card {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--giveaid-transition);
+  height: 100%;
+}
+
+.partner-card:hover {
+  border-color: var(--giveaid-primary);
+  box-shadow: var(--giveaid-shadow-sm);
+}
+
+.partner-logo-box {
+  height: 64px;
+  background-color: var(--giveaid-primary-light);
+  border-radius: var(--giveaid-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--giveaid-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   About Us Page Components
+   ========================================================================== */
+
+.about-hero-banner {
+  background: linear-gradient(135deg, var(--giveaid-secondary) 0%, #1e3a47 100%);
+  color: #ffffff;
+  padding: 3.5rem 0;
+  border-radius: var(--giveaid-radius-lg);
+  margin-bottom: 2.5rem;
+}
+
+.about-nav-bar {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-pill);
+  padding: 0.5rem 1rem;
+  box-shadow: var(--giveaid-shadow-sm);
+  position: sticky;
+  top: 75px;
+  z-index: 1020;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 0.5rem;
+}
+
+.about-nav-link {
+  color: var(--giveaid-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--giveaid-radius-pill);
+  white-space: nowrap;
+  transition: var(--giveaid-transition);
+}
+
+.about-nav-link:hover {
+  color: var(--giveaid-primary);
+  background-color: var(--giveaid-primary-light);
+}
+
+.about-section-container {
+  padding-top: 2rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--giveaid-border);
+  padding-bottom: 3.5rem;
+}
+
+.about-section-container:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.team-card {
+  background-color: var(--giveaid-surface);
+  border: 1px solid var(--giveaid-border);
+  border-radius: var(--giveaid-radius-md);
+  padding: 1.75rem;
+  text-align: center;
+  transition: var(--giveaid-transition);
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--giveaid-shadow-md);
+  border-color: var(--giveaid-primary);
+}
+
+.team-avatar-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--giveaid-primary-subtle) 0%, #a7f3d0 100%);
+  color: var(--giveaid-primary-dark);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 3px solid #ffffff;
+  box-shadow: var(--giveaid-shadow-sm);
+}
+
+.achievement-milestone-card {
+  background-color: var(--giveaid-surface);
+  border-left: 4px solid var(--giveaid-primary);
+  border-top: 1px solid var(--giveaid-border);
+  border-right: 1px solid var(--giveaid-border);
+  border-bottom: 1px solid var(--giveaid-border);
+  border-radius: 0 var(--giveaid-radius-md) var(--giveaid-radius-md) 0;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--giveaid-transition);
+}
+
+.achievement-milestone-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--giveaid-shadow-sm);
+}
