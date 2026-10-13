@@ -1,0 +1,45 @@
+## Visual Studio & .NET Build Artifacts
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+out/
+build/
+
+## Visual Studio Cache, User Settings & IDE Workspaces
+.vs/
+*.user
+*.userprefs
+*.suo
+*.userosscache
+*.sln.docstates
+*.ide/
+
+## Entity Framework & SQL Server Database Files
+*.mdf
+*.ldf
+*.ndf
+
+## Local Secrets, Certificates & Environment Variables
+*.local.json
+.env
+.env.*
+secrets.json
+*.pfx
+*.key
+*.pem
+
+## NuGet Package Restore Artifacts
+*.nupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+## Operating System & Temporary Files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.tmp
+*~
